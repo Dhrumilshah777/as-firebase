@@ -1,23 +1,8 @@
-"use client";
-
-import { Suspense } from "react";
-import { useSearchParams } from "next/navigation";
-
-function NotFoundContent() {
-  const params = useSearchParams();
-
+export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-4xl font-bold">404 - Page Not Found</h1>
-      <p>Query params: {params.toString()}</p>
+      <p>Sorry, we couldn’t find the page you’re looking for.</p>
     </div>
-  );
-}
-
-export default function NotFound() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <NotFoundContent />
-    </Suspense>
   );
 }
